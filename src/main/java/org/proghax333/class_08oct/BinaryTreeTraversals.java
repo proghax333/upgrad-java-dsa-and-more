@@ -148,6 +148,27 @@ class BinaryTree<T> {
             queue.add(n.getRight());
         }
     }
+
+    public void bfsRecursive(Node<T> node, Consumer<T> consumer) {
+        if(node == null) {
+            return;
+        }
+
+        Node<T> left = node.getLeft(), right = node.getRight();
+
+        consumer.accept(node.getData());
+
+        if(left != null) {
+            consumer.accept(left.getData());
+        }
+        if(right != null) {
+            consumer.accept(right.getData());
+        }
+
+        if(left != null) {
+
+        }
+    }
 }
 
 public class BinaryTreeTraversals {
